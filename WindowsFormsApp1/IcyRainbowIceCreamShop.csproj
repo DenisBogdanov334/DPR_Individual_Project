@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{922F96C2-88DB-4158-9A28-2387329C8630}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractClasses\AbstractIceCream.cs" />
+    <Compile Include="Bases\ChocolateIceCream.cs" />
+    <Compile Include="Bases\CottonCandyIceCream.cs" />
+    <Compile Include="Factories\BeverageFactory.cs" />
+    <Compile Include="Factories\IceCreamFactory.cs" />
+    <Compile Include="AbstractClasses\AbstractSalesman.cs" />
+    <Compile Include="Commands\BeverageOrderCommand.cs" />
+    <Compile Include="Beverages\HotTea.cs" />
+    <Compile Include="Beverages\IceTea.cs" />
+    <Compile Include="Commands\IceCreamOrderCommand.cs" />
+    <Compile Include="IcyRainbowAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IcyRainbowAdminForm.Designer.cs">
+      <DependentUpon>IcyRainbowAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoker\IcyRainbowSelectionMonitor.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\IBeverage.cs" />
+    <Compile Include="Resources\Decorators\CaramelSyrupDecorator.cs" />
+    <Compile Include="IcyRainbowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IcyRainbowForm.Designer.cs">
+      <DependentUpon>IcyRainbowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Decorators\KiwiSyrupDecorator.cs" />
+    <Compile Include="Resources\Core\IceCreamSpoon.cs" />
+    <Compile Include="Resources\Core\IceCreamCup.cs" />
+    <Compile Include="Resources\Core\IceCreamCone.cs" />
+    <Compile Include="Interfaces\IIceCream.cs" />
+    <Compile Include="Interfaces\IResourceObserver.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Bases\VanillaIceCream.cs" />
+    <Compile Include="Resources\Decorators\SprinklesDecorator.cs" />
+    <Compile Include="Beverages\Soda.cs" />
+    <Compile Include="Receiver\Salesman.cs" />
+    <EmbeddedResource Include="IcyRainbowAdminForm.resx">
+      <DependentUpon>IcyRainbowAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IcyRainbowForm.resx">
+      <DependentUpon>IcyRainbowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
